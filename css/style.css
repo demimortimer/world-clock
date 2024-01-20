@@ -28,6 +28,12 @@ footer {
   color: rgba(0, 0, 0, 0.8);
 }
 
+a {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  text-align: center;
+}
+
 .container {
   background-color: #ffffff;
   max-width: 600px;
@@ -59,4 +65,8 @@ footer {
   font-size: 20px;
   vertical-align: middle;
   line-height: 40px;
+}
+
+.link {
+  text-align: center;
 }
