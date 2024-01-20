@@ -22,6 +22,18 @@ function updateParisTime() {
   parisTimeElement.innerHTML = `${parisTime} <small>${parisAmPm}</small>`;
 }
 
+function updatePragueTime() {
+  let pragueElement = document.querySelector("#prague");
+  let pragueDateElement = pragueElement.querySelector(".date");
+  let pragueTimeElement = pragueElement.querySelector(".time");
+  let pragueTimezone = moment().tz("Europe/Prague");
+  let pragueTime = pragueTimezone.format("h:mm:ss");
+  let pragueAmPm = pragueTimezone.format("A");
+
+  pragueDateElement.innerHTML = pragueTimezone.format("MMMM Do YYYY");
+  pragueTimeElement.innerHTML = `${pragueTime} <small>${pragueAmPm}</small>`;
+}
+
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
@@ -45,6 +57,7 @@ function updateCity(event) {
 
 setInterval(updateLosAngelesTime, 1000);
 setInterval(updateParisTime, 1000);
+setInterval(updatePragueTime, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
