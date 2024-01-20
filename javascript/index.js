@@ -22,16 +22,16 @@ function updateParisTime() {
   parisTimeElement.innerHTML = `${parisTime} <small>${parisAmPm}</small>`;
 }
 
-function updatePragueTime() {
-  let pragueElement = document.querySelector("#prague");
-  let pragueDateElement = pragueElement.querySelector(".date");
-  let pragueTimeElement = pragueElement.querySelector(".time");
-  let pragueTimezone = moment().tz("Europe/Prague");
-  let pragueTime = pragueTimezone.format("h:mm:ss");
-  let pragueAmPm = pragueTimezone.format("A");
+function updateAccraTime() {
+  let accraElement = document.querySelector("#accra");
+  let accraDateElement = accraElement.querySelector(".date");
+  let accraTimeElement = accraElement.querySelector(".time");
+  let accraTimezone = moment().tz("Africa/Accra");
+  let accraTime = accraTimezone.format("h:mm:ss");
+  let accraAmPm = accraTimezone.format("A");
 
-  pragueDateElement.innerHTML = pragueTimezone.format("MMMM Do YYYY");
-  pragueTimeElement.innerHTML = `${pragueTime} <small>${pragueAmPm}</small>`;
+  accraDateElement.innerHTML = accraTimezone.format("MMMM Do YYYY");
+  accraTimeElement.innerHTML = `${accraTime} <small>${accraAmPm}</small>`;
 }
 
 function updateCity(event) {
@@ -57,7 +57,7 @@ function updateCity(event) {
 
 setInterval(updateLosAngelesTime, 1000);
 setInterval(updateParisTime, 1000);
-setInterval(updatePragueTime, 1000);
+setInterval(updateAccraTime, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
